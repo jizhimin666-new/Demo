@@ -1,0 +1,87 @@
+/* 全局化处理 */
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 微软雅黑;
+  background: #333;
+  color: #fff;
+  height: 100vh;
+  line-height: 1.6;
+  /* 只让看到第一页内容,这个内容设置后页面无法滚动 */
+  overflow: hidden;
+}
+.container{
+width: 100%;
+height: 100%;
+
+/* 使用CSS实现全图滚动 */
+overflow-y: scroll;
+scroll-behavior: smooth;
+scroll-snap-type: y mandatory;
+
+
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 60;
+  background: rgba(0, 0, 0, 0.7);
+}
+.navbar ul{
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+
+}
+.navbar ul li{
+  margin: 0 1rem;
+  padding: 1rem;
+}
+.navbar ul li a{
+  text-decoration: none;
+  color: #f4f4f4;
+}
+.navbar ul li a:hover{
+  
+  color: skyblue;
+}
+section{
+/* 显示形式 可伸缩 */
+  display: flex;
+/* 盒子方向  竖直 */
+flex-direction: column;
+/* 内容水平居中 */
+justify-content: center;
+/* 垂直居中 */
+align-items: center;   
+text-align: center;
+width: 100%;
+/* vh 表示撑满当前屏幕大小 */
+height: 100vh;
+/* 当鼠标处于两种之间的时候，谁的图片占的高度更高，就会显示谁的页面 */
+scroll-snap-align: center;
+}
+section h1{
+  font-size: 3rem;
+}
+section p{
+  font-size: 1.5rem;
+}
+section#home{
+background: url("./img/1.jpg") no-repeat center center/cover;
+}
+section#about{
+  background: url("./img/2.jpg") no-repeat center center/cover;
+}
+section#service{
+  background: url("./img/3.jpg") no-repeat center center/cover;
+}
+section#contact{
+  background: url("./img/4.jpg") no-repeat center center/cover;
+}
